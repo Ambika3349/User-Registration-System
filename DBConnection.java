@@ -13,9 +13,9 @@ public class DBConnection {
             Class.forName("oracle.jdbc.OracleDriver");
 
             // Check your database details carefully
-            String url = "jdbc:oracle:thin:@HOST:1521/ORCLPDB";
-            String user = "myoracle";
-            String password = "oracle";   // your real password
+            String url = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1"'
+            String user = "sa";
+            String password = "";   // your real password
 
             conn = DriverManager.getConnection(url, user, password);
 
@@ -32,3 +32,4 @@ public class DBConnection {
     }
 
 }
+
