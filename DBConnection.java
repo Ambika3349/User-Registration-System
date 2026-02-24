@@ -21,13 +21,17 @@ public class DBConnection {
             conn = DriverManager.getConnection(url, user, password);
             
             Statement st = conn.createStatement();
-
 st.execute(
-    "CREATE TABLE IF NOT EXISTS users (" +
-    "id INT AUTO_INCREMENT PRIMARY KEY, " +
-    "name VARCHAR(100), " +
-    "email VARCHAR(100), " +
-    "password VARCHAR(100))"
+    "CREATE TABLE IF NOT EXISTS USERS_REG (" +
+    "USER_ID INT PRIMARY KEY, " +
+    "USERNAME VARCHAR(100), " +
+    "DOB DATE, " +
+    "PASSWORD VARCHAR(100), " +
+    "QUESTION1 VARCHAR(255), " +
+    "ANSWER1 VARCHAR(255), " +
+    "QUESTION2 VARCHAR(255), " +
+    "ANSWER2 VARCHAR(255), " +
+    "PWD_CHANGE_DATE DATE)"
 );
             System.out.println("H2 Table Created Successfully");
 
@@ -44,6 +48,7 @@ st.execute(
     }
 
 }
+
 
 
 
