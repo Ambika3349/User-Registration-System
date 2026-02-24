@@ -13,7 +13,7 @@ public class DBConnection {
             Class.forName("oracle.jdbc.OracleDriver");
 
             // Check your database details carefully
-            String url = "jdbc:oracle:thin:@//localhost:1521/ORCLPDB";
+            String url = "jdbc:oracle:thin:@HOST:1521/ORCLPDB";
             String user = "myoracle";
             String password = "oracle";   // your real password
 
@@ -30,4 +30,5 @@ public class DBConnection {
 
         return conn;
     }
+
 }
