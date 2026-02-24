@@ -10,10 +10,10 @@ public class DBConnection {
 
         try {
             // Load Oracle Driver
-            Class.forName("oracle.jdbc.OracleDriver");
+            Class.forName("org.h2.Driver");
 
             // Check your database details carefully
-            String url = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1"'
+            String url = "jdbc:h2:file:./data/testdb";
             String user = "sa";
             String password = "";   // your real password
 
@@ -32,4 +32,5 @@ public class DBConnection {
     }
 
 }
+
 
