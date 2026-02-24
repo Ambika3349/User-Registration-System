@@ -33,6 +33,8 @@ st.execute(
     "ANSWER2 VARCHAR(255), " +
     "PWD_CHANGE_DATE DATE)"
 );
+            String sql = "INSERT INTO USERS_REG VALUES (?,?,?,?,?,?,?,?,?)";
+            
             System.out.println("H2 Table Created Successfully");
 
             if (conn != null) {
@@ -48,6 +50,7 @@ st.execute(
     }
 
 }
+
 
 
 
