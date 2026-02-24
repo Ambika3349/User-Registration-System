@@ -29,6 +29,7 @@ st.execute(
     "email VARCHAR(100), " +
     "password VARCHAR(100))"
 );
+            System.out.println("H2 Table Created Successfully");
 
             if (conn != null) {
                 System.out.println("Database Connected Successfully");
@@ -43,6 +44,7 @@ st.execute(
     }
 
 }
+
 
 
 
