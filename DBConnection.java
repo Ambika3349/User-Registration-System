@@ -2,7 +2,6 @@ package com.user;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 
 public class DBConnection {
 
@@ -11,31 +10,14 @@ public class DBConnection {
 
         try {
             // Load Oracle Driver
-            Class.forName("org.h2.Driver");
+            Class.forName("oracle.jdbc.OracleDriver");
 
             // Check your database details carefully
-            String url = "jdbc:h2:file:./data/testdb";
-            String user = "sa";
-            String password = "";   // your real password
+            String url = "jdbc:oracle:thin:@//localhost:1521/ORCLPDB";
+            String user = "myoracle";
+            String password = "oracle";   // your real password
 
             conn = DriverManager.getConnection(url, user, password);
-            
-            Statement st = conn.createStatement();
-st.execute(
-    "CREATE TABLE IF NOT EXISTS USERS_REG (" +
-    "USER_ID INT PRIMARY KEY, " +
-    "USERNAME VARCHAR(100), " +
-    "DOB DATE, " +
-    "PASSWORD VARCHAR(100), " +
-    "QUESTION1 VARCHAR(255), " +
-    "ANSWER1 VARCHAR(255), " +
-    "QUESTION2 VARCHAR(255), " +
-    "ANSWER2 VARCHAR(255), " +
-    "PWD_CHANGE_DATE DATE)"
-);
-            String sql = "INSERT INTO USERS_REG VALUES (?,?,?,?,?,?,?,?,?)";
-            
-            System.out.println("H2 Table Created Successfully");
 
             if (conn != null) {
                 System.out.println("Database Connected Successfully");
@@ -48,12 +30,4 @@ st.execute(
 
         return conn;
     }
-
 }
-
-
-
-
-
-
-
